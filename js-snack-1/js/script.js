@@ -5,11 +5,16 @@
 
 const firstNum = parseInt(prompt('Insert first number'));
 const secondNum = parseInt(prompt('Insert second number'));
+let result = document.getElementById('message');
 
 if (firstNum < secondNum) {
-    console.log(secondNum);
+    result.innerHTML = secondNum;
+} else if (secondNum < firstNum) {
+    result.innerHTML = firstNum;
+} else if (isNaN(firstNum) || isNaN(secondNum)) {
+    result.innerHTML = "Please insert a number."
 } else {
-    console.log(firstNum);
+    result.innerHTML = "The numbers inserted are equal."
 }
 
 // oppure :
