@@ -4,6 +4,7 @@
   Il programma stampa la somma di tutti i numeri inseriti.
  */
 
+const result = document.getElementById('result');
 let sum = 0;
 
 for (i = 0; i < 10; i++) {
@@ -11,4 +12,4 @@ for (i = 0; i < 10; i++) {
   sum += number;
 } 
 
-console.log('The sum of your numbers is ', sum);
+result.innerHTML = 'The sum of your numbers is ' + sum;

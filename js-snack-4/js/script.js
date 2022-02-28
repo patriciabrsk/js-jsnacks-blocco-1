@@ -5,6 +5,7 @@
  *
  */
 
+// Create array of guests
 const guestList = [
     'John',
     'Julia',
@@ -18,25 +19,32 @@ const guestList = [
     'Joe'
 ]
 
-const userName = prompt("What's your name?").toLowerCase();
-let isInvited = false;
+document.getElementById('check').addEventListener('click',
+    function() {
+        const userName = document.querySelector('.user-name').value;
+        const message = document.getElementById('message');
 
-for (i = 0; i < guestList.length; i++) {
-    if (guestList[i] == userName) {
-        isInvited = true;
-    } 
-}
+        let isInvited = false;
 
-if (isInvited) {
-    console.log ('Your name is in the guest list.')
-} else {
-    console.log ('Your name is not in the guest list.')
-}
+        for (i = 0; i < guestList.length; i++) {
+            if (guestList[i] == userName) {
+                isInvited = true;
+            } 
+        }
 
-/*
-if (guestList.indexOf(userName) > -1) {
-    console.log ('Your name is in the guest list.')
-} else {
-    console.log ('Your name is not in the guest list.')
-}
-*/
+        if (isInvited) {
+            message.innerHTML = `Hi ${userName}, your name is in the guest list.`;
+        } else {
+            message.innerHTML = `Hi ${userName}, your name is not in the guest list.`;
+        }
+
+        /*
+        if (guestList.indexOf(userName) > -1) {
+            console.log ('Your name is in the guest list.')
+        } else {
+            console.log ('Your name is not in the guest list.')
+        }
+        */
+    }
+);
+
