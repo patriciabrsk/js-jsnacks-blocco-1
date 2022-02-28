@@ -22,15 +22,17 @@ document.getElementById('enter').addEventListener('click',
         const inputFirstWord = document.querySelector('.first-word').value;
         const inputSecondWord = document.querySelector('.second-word').value;
 
+        const result = document.getElementById('result');
+
         if (inputFirstWord.length < inputSecondWord.length) {
             console.log("Shorter word is: " + inputFirstWord);
-            document.getElementById('result').innerHTML = "Shorter word is: " + inputFirstWord;
-            document.getElementById('result').innerHTML += "<br> Longer word is: " + inputSecondWord; 
+            result.innerHTML = "Shorter word is: " + inputFirstWord;
+            result.innerHTML += "<br> Longer word is: " + inputSecondWord; 
         } else if (inputFirstWord.length === inputSecondWord.length){
             document.getElementById('result').innerHTML = "Words are equally long.";
         } else {
-            document.getElementById('result').innerHTML = "Shorter word is: " + inputSecondWord; 
-            document.getElementById('result').innerHTML += "<br> Longer word is: " + inputFirstWord; 
+            result.innerHTML = "Shorter word is: " + inputSecondWord; 
+            result.innerHTML += "<br> Longer word is: " + inputFirstWord; 
         }
     }
 );
@@ -40,5 +42,6 @@ document.getElementById('reset').addEventListener('click',
     function() {
         document.querySelector('.first-word').value = '';
         document.querySelector('.second-word').value = '';
-        document.getElementById('result').classList.add("invisible");
+        result.classList.add("invisible");
     });
+    
