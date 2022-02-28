@@ -19,10 +19,14 @@ const guestList = [
     'Joe'
 ]
 
+const message = document.getElementById('message');
+
+// Click event for check button
 document.getElementById('check').addEventListener('click',
     function() {
+
+         // Get a name input from user 
         const userName = document.querySelector('.user-name').value;
-        const message = document.getElementById('message');
 
         let isInvited = false;
 
@@ -45,6 +49,14 @@ document.getElementById('check').addEventListener('click',
             console.log ('Your name is not in the guest list.')
         }
         */
+    }
+);
+
+// Click event for reset button
+document.getElementById('reset').addEventListener('click', 
+    function() {
+        document.querySelector('.user-name').value = '';
+        message.innerHTML = '';
     }
 );
 

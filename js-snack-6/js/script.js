@@ -5,12 +5,17 @@
  *
  */
 
-let sum = 0;
-const userInput = prompt('Insert a 7 digit number');
+// Click event for sum button
+document.getElementById('sum').addEventListener('click',
+  function() {
 
-for (i = 0; i < userInput.length; i++) {
-  let number = parseInt(userInput[i]) 
-  sum += number;
-}
+    let sum = 0;
+    const userInput = document.querySelector('.number').value;
 
-console.log(sum);
+    for (i = 0; i < userInput.length; i++) {
+      let number = parseInt(userInput[i]);
+      sum += number;
+    }
+    document.querySelector('.digits-sum').innerHTML = sum;
+  }
+);
