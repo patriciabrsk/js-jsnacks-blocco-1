@@ -18,4 +18,3 @@ for (let i = 0; i < randomArray.length; i++) {
 }
 console.log(sum);
 console.log(sum / randomArray.length);
-
